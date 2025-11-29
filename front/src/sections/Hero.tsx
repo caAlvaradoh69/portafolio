@@ -244,8 +244,7 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
                   color: "var(--text-muted)",
                 }}
               >
-                Santiago, Chile · Trabajando con mailing, microservicios y
-                soluciones AI para automatizar procesos.
+                {t.location}
               </p>
             </div>
           </div>

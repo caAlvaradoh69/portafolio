@@ -1,5 +1,6 @@
 export interface Project {
-  name: string;
+  nameEs: string;
+  nameEn: string;
   period?: string;
   descriptionEs: string;
   descriptionEn: string;
@@ -10,7 +11,8 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    name: "Plataforma de Mailing Escalable",
+    nameEs: "Plataforma de Mailing Escalable",
+    nameEn: "Mailing Platform",
     period: "2024 — Actualidad",
     descriptionEs:
       "Servicio de mailing modular basado en microservicios, preparado para manejar envíos masivos y por demanda, con colas SQS, AWS SES y monitoreo de métricas clave.",
@@ -19,7 +21,8 @@ export const projects: Project[] = [
     tags: ["Spring Boot", "AWS SES", "SQS", "PostgreSQL", "Docker"],
   },
   {
-    name: "Integraciones para Seguros",
+    nameEs: "Integraciones para Seguros",
+    nameEn: "Integrations for insurance company",
     descriptionEs:
       "APIs y servicios que conectan distintas fuentes de datos (polizas, cotizaciones, clientes) para simplificar el flujo entre brokers, aseguradoras y sistemas internos.",
     descriptionEn:
@@ -27,7 +30,8 @@ export const projects: Project[] = [
     tags: ["Java", "Spring Boot", "Oracle", "REST APIs"],
   },
   {
-    name: "Automatización de Procesos con Python y AWS",
+    nameEs: "Automatización de Procesos con Python y AWS",
+    nameEn: "Workflows using Python and AWS",
     descriptionEs:
       "Scripts y lambdas en Python para limpiar datos, generar reportes y automatizar tareas repetitivas, reduciendo trabajo manual y errores operativos.",
     descriptionEn:
@@ -35,7 +39,8 @@ export const projects: Project[] = [
     tags: ["Python", "AWS Lambda", "DynamoDB"],
   },
   {
-    name: "Cliente Web tipo Outlook en Next.js",
+    nameEs: "Cliente Web tipo Outlook en Next.js",
+    nameEn: "Mailing web client",
     descriptionEs:
       "Interfaz de correo inspirada en Outlook Web, construida en Next.js y pensada para integrarse con APIs de mailing propias. Diseño responsive, filtros, búsqueda y bandejas personalizadas.",
     descriptionEn:
@@ -43,7 +48,8 @@ export const projects: Project[] = [
     tags: ["Next.js", "React", "Tailwind", "UI/UX"],
   },
   {
-    name: "Chatbots con LLMs y Python",
+    nameEs: "Integraciones con IA",
+    nameEn: "AI tools, integrations",
     descriptionEs:
       "Bots conversacionales conectados a datos internos utilizando LLMs, orientados a automatizar respuestas frecuentes y procesos internos de soporte.",
     descriptionEn:

@@ -35,7 +35,7 @@ export const Projects: React.FC<ProjectsProps> = ({ language }) => {
           }}
         >
           {projects.map((project) => (
-            <article key={project.name} className="card">
+            <article key={project.nameEs} className="card">
               <div
                 style={{
                   display: "flex",
@@ -51,7 +51,7 @@ export const Projects: React.FC<ProjectsProps> = ({ language }) => {
                       margin: 0,
                     }}
                   >
-                    {project.name}
+                    {language === "en" ? project.nameEn : project.nameEs}
                   </h3>
                 </div>
               </div>
@@ -63,7 +63,9 @@ export const Projects: React.FC<ProjectsProps> = ({ language }) => {
                   marginBottom: 10,
                 }}
               >
-                {language === "en" ? project.descriptionEn : project.descriptionEs}
+                {language === "en"
+                  ? project.descriptionEn
+                  : project.descriptionEs}
               </p>
 
               <div

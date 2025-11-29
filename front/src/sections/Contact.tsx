@@ -143,7 +143,7 @@ ${message}
 
               <a
                 className="contact-pill"
-                href="https://www.linkedin.com/in/caalvaradoh"
+                href="https://www.linkedin.com/in/carlos-felipe-alvarado-hernandez-64a2111ba"
                 target="_blank"
                 rel="noopener noreferrer"
               >
