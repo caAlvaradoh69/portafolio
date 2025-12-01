@@ -14,7 +14,8 @@ const copy = {
     subtitle:
       "I design and build scalable products using React, Node.js, Java / Spring Boot and AWS. I love clean UIs, good DX and automating workflows.",
     primaryCta: "Let's talk",
-    secondaryCta: "Download CV (coming soon)",
+    secondaryCta: "Download CV",
+    href: "/docs/CV_Carlos_Alvarado_2025_SeniorTechLead_EN.pdf",
     location:
       "Santiago, Chile · Currently focused on mailing, microservices and AI-powered automation.",
     currentlyWorkingOn: "Currently working on",
@@ -28,7 +29,8 @@ const copy = {
     subtitle:
       "Diseño y desarrollo productos escalables usando React, Node.js, Java / Spring Boot y AWS. Me preocupan las UIs limpias, la DX y la automatización.",
     primaryCta: "Conversemos",
-    secondaryCta: "Descargar CV (pronto)",
+    secondaryCta: "Descargar CV",
+    href: "/docs/CV_Carlos_Alvarado_2025_SeniorTechLead_ES.pdf",
     location:
       "Santiago, Chile · Trabajando con mailing, microservicios y soluciones AI para automatizar procesos.",
     currentlyWorkingOn: "Actualmente enfocado en",
@@ -141,7 +143,9 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
               className="button-secondary"
               style={{ borderRadius: 999 }}
             >
-              {t.secondaryCta}
+              <a href={t.href} download>
+                {t.secondaryCta}
+              </a>
             </button>
           </div>
 
