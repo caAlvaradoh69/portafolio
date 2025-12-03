@@ -39,7 +39,7 @@ const copy = {
   },
 } as const;
 
-export const Hero: React.FC<HeroProps> = ({ language }) => {
+export const Hero: React.FC<HeroProps> = ({ language, theme }) => {
   const t = copy[language] ?? copy.en;
 
   const handleContactClick = () => {
@@ -50,17 +50,9 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
 
   return (
     <section className="section" id="hero">
-      <div
-        className="section__inner"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "minmax(0, 3fr) minmax(0, 2.3fr)",
-          gap: 32,
-          alignItems: "center",
-        }}
-      >
+      <div className="section__inner hero__layout">
         {/* Texto principal */}
-        <div>
+        <div className="hero__text">
           <div
             style={{
               display: "inline-flex",
@@ -69,7 +61,10 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
               padding: "4px 10px",
               borderRadius: 999,
               border: "1px solid rgba(148, 163, 184, 0.4)",
-              background: "rgba(15,23,42,0.85)",
+              background:
+                theme === "dark"
+                  ? "rgba(15,23,42,0.85)"
+                  : "rgba(249, 250, 251, 0.94)",
               backdropFilter: "blur(14px)",
               fontSize: 11,
               color: "var(--text-muted)",
@@ -148,7 +143,6 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
               </a>
             </button>
           </div>
-
           <div
             style={{
               display: "inline-flex",
@@ -157,7 +151,10 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
               padding: "6px 12px",
               borderRadius: 999,
               border: "1px solid rgba(148,163,184,0.5)",
-              background: "rgba(15,23,42,0.9)",
+              background:
+                theme === "dark"
+                  ? "rgba(15,23,42,0.85)"
+                  : "rgba(249, 250, 251, 0.94)",
               fontSize: 11,
             }}
           >
@@ -184,6 +181,7 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
 
         {/* Tarjeta con foto al estilo Alex Stark */}
         <div
+          className="hero__image"
           style={{
             justifySelf: "center",
             width: "100%",
@@ -209,8 +207,8 @@ export const Hero: React.FC<HeroProps> = ({ language }) => {
             >
               <div
                 style={{
-                  width: 120,
-                  height: 120,
+                  width: "clamp(90px, 12vw, 140px)",
+                  height: "clamp(90px, 12vw, 140px)",
                   borderRadius: "999px",
                   margin: "0 auto 14px",
                   background:

@@ -17,7 +17,9 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem("theme") as Theme | null;
-    const storedLanguage = window.localStorage.getItem("language") as Language | null;
+    const storedLanguage = window.localStorage.getItem(
+      "language"
+    ) as Language | null;
 
     if (storedTheme === "light" || storedTheme === "dark") {
       setTheme(storedTheme);
@@ -57,7 +59,7 @@ const App: React.FC = () => {
         onLanguageChange={handleLanguageChange}
       />
       <main>
-        <Hero language={language} />
+        <Hero language={language} theme={theme} />
         <About language={language} />
         <Experience language={language} />
         <Projects language={language} />

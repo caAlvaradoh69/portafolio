@@ -205,6 +205,7 @@ async function askBackend(
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "x-api-key": "yPHLEEGnZK1UJjwt6rBrM6YnhQjIjsvk16Aj46lf",
       },
       body: JSON.stringify({
         message: question,
