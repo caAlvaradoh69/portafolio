@@ -247,7 +247,6 @@ textarea {
   background: rgba(15, 23, 42, 0.9);
   cursor: pointer;
   outline: none;
-  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
@@ -269,6 +268,12 @@ textarea {
 
 .nav__menu-toggle--open span:last-child {
   transform: translateY(-2px) rotate(-40deg);
+}
+
+@media (max-width: 768px) {
+  .nav__menu-toggle {
+    display: block;
+  }
 }
 
 :root[data-theme="light"] .nav__menu-toggle {
@@ -856,6 +861,36 @@ textarea {
   grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
   gap: 42px;
   align-items: center;
+}
+
+.available__button{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(14px);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.experience__button{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border:1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.85);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+:root[data-theme="light"] .available__button,
+:root[data-theme="light"] .experience__button{
+  background: rgba(249, 250, 251, 0.94);
 }
 
 /* Pantallas medianas: mantiene dos columnas pero con proporciones más equilibradas */

@@ -39,7 +39,7 @@ const copy = {
   },
 } as const;
 
-export const Hero: React.FC<HeroProps> = ({ language, theme }) => {
+export const Hero: React.FC<HeroProps> = ({ language }) => {
   const t = copy[language] ?? copy.en;
 
   const handleContactClick = () => {
@@ -53,24 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ language, theme }) => {
       <div className="section__inner hero__layout">
         {/* Texto principal */}
         <div className="hero__text">
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "4px 10px",
-              borderRadius: 999,
-              border: "1px solid rgba(148, 163, 184, 0.4)",
-              background:
-                theme === "dark"
-                  ? "rgba(15,23,42,0.85)"
-                  : "rgba(249, 250, 251, 0.94)",
-              backdropFilter: "blur(14px)",
-              fontSize: 11,
-              color: "var(--text-muted)",
-              marginBottom: 14,
-            }}
-          >
+          <div className="available__button">
             <span
               style={{
                 width: 7,
@@ -143,21 +126,7 @@ export const Hero: React.FC<HeroProps> = ({ language, theme }) => {
               </a>
             </button>
           </div>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "6px 12px",
-              borderRadius: 999,
-              border: "1px solid rgba(148,163,184,0.5)",
-              background:
-                theme === "dark"
-                  ? "rgba(15,23,42,0.85)"
-                  : "rgba(249, 250, 251, 0.94)",
-              fontSize: 11,
-            }}
-          >
+          <div className="experience__button">
             <span
               style={{
                 width: 22,

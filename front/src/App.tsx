@@ -59,7 +59,7 @@ const App: React.FC = () => {
         onLanguageChange={handleLanguageChange}
       />
       <main>
-        <Hero language={language} theme={theme} />
+        <Hero language={language} />
         <About language={language} />
         <Experience language={language} />
         <Projects language={language} />

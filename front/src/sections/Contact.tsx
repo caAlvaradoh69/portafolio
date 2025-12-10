@@ -6,6 +6,7 @@ type Status = "idle" | "sending" | "sent" | "error";
 interface ContactProps {
   language: Language;
 }
+const URL_MAIL = import.meta.env.VITE_URL_INTERMEDIARIO;
 
 const copy = {
   en: {
@@ -84,17 +85,17 @@ ${message}
     };
 
     try {
-      const response = await fetch(
-        "https://a9yhi89yij.execute-api.us-east-2.amazonaws.com/dev/mailing/send",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-api-key": "yPHLEEGnZK1UJjwt6rBrM6YnhQjIjsvk16Aj46lf",
-          },
-          body: JSON.stringify(payload),
-        }
-      );
+      const request = {
+        type: "mail",
+        payload,
+      };
+      const response = await fetch(URL_MAIL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(request),
+      });
 
       if (!response.ok) {
         throw new Error(`Error en la API: ${response.status}`);

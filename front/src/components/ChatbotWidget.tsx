@@ -13,8 +13,7 @@ interface ChatbotWidgetProps {
   language: Language;
 }
 
-const CHATBOT_API_URL =
-  "https://a9yhi89yij.execute-api.us-east-2.amazonaws.com/dev/chatbot";
+const CHATBOT_API_URL = import.meta.env.VITE_URL_INTERMEDIARIO;
 
 const initialMessages: Record<Language, Message[]> = {
   en: [
@@ -42,8 +41,10 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({ language }) => {
 
   // Si el usuario cambia el idioma mientras el chat está vacío, reseteamos el mensaje inicial
   React.useEffect(() => {
-    if (messages.length === 0) {
-      setMessages(initialMessages[language] ?? initialMessages.en);
+    if (messages.length <= 1) {
+      let firstMessage =
+        language == "es" ? initialMessages.es : initialMessages.en;
+      setMessages(firstMessage);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [language]);
@@ -205,11 +206,13 @@ async function askBackend(
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": "yPHLEEGnZK1UJjwt6rBrM6YnhQjIjsvk16Aj46lf",
       },
       body: JSON.stringify({
-        message: question,
-        language,
+        type: "chat",
+        payload: {
+          message: question,
+          language,
+        },
       }),
     });
 
@@ -220,7 +223,6 @@ async function askBackend(
     }
 
     let data = await res.json();
-    data = JSON.parse(data.body);
     if (data && typeof data.reply === "string") {
       return data.reply;
     }
