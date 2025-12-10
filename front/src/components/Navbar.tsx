@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import type { Language, Theme } from "../App";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdDeveloperMode } from "react-icons/md";
 
 interface NavbarProps {
   theme: Theme;
@@ -71,7 +72,9 @@ export const Navbar: React.FC<NavbarProps> = ({
     >
       <div className="nav__inner">
         <div className="nav__brand" onClick={() => handleScroll("hero")}>
-          <div className="nav__logo">DNVR</div>
+          <div className="nav__logo">
+            <MdDeveloperMode />
+          </div>
           <div className="nav__brand-text">
             <span className="nav__brand-title">Carlos Alvarado</span>
             <span className="nav__brand-subtitle">

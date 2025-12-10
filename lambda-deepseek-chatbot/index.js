@@ -1,13 +1,12 @@
-import fetch from "node-fetch";
+const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY;
 
-const DEEPSEEK_API_KEY = "sk-c8da7dddd7894a46b774aade2f93c355";
 
-// En Node.js 20 en Lambda ya existe fetch, así que no hace falta importar nada extra.
-
-exports.handler = async (event) => {
+export const handler = async (event) => {
   try {
-    const body = JSON.parse(event.body || "{}");
-    const { message, language = "es" } = body;
+    console.log(event);
+    
+    // const body = JSON.parse(event || "{}");
+    const { message, language = "es" } = event;
 
     if (!message || typeof message !== "string") {
       return jsonResponse(400, { error: "El campo 'message' es requerido" });
